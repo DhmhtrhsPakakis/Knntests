@@ -1,24 +1,42 @@
-# Image Classification: Exploring K-NN and Nearest Centroid
-This project is a hands-on exploration of distance-based Machine Learning algorithms (like K-Nearest Neighbors and Nearest Centroid).
+# 🧠 Image Classification: Exploring ML Algorithms from Scratch
 
-We trained and tested our models on the FashionMNIST dataset, which contains 70,000 grayscale images (28x28 pixels) of clothes and shoes.
+This repository is a hands-on, deep-dive exploration into foundational Machine Learning algorithms for image classification. Using the **FashionMNIST dataset** (70,000 grayscale images of clothing and shoes, 28x28 pixels), we build, tune, and evaluate various models to deeply understand their inner workings, strengths, and limitations.
 
-Important Note: This README is just a quick summary of our results. For the full, step-by-step analysis, the math behind our choices, and detailed code explanations, please read the Documentation file included in this repository.
+> ⚠️ 
+> This README is just a quick directory of the repository. **For the full, step-by-step mathematical analysis, architectural choices, and detailed conclusions, please read the included PDF Documentation files.** The true depth of this project lies within those reports.
 
-## Methodology & Experimentation
+## 📂 What's Inside (Repository Structure)
 
-Throughout this project, we focused on the systematic exploration and optimization of the machine learning pipeline. Our approach was not static; rather, it was based on continuous experimentation across the following areas:
+The project is divided into three main experimental phases, each containing its respective Jupyter Notebook and a detailed PDF report:
 
-* **Feature Extraction Process:** We experimented extensively with data representation. We altered and tested various feature extraction methods to find the optimal way to transform the raw information before feeding it into the models.
-* **Algorithm Exploration:** We developed and evaluated multiple machine learning algorithms to practically examine which approach (or family of models) best fits the specific nature of our problem.
-* **K-Fold Cross-Validation & Hyperparameter Tuning:** To find the optimal hyperparameters and prevent overfitting, the evaluation of the models was not conducted using a simple train/test split. Instead, we integrated K-Fold Cross-Validation techniques, assessing the stability and generalization capabilities of the algorithms across multiple different data subsets (folds).
+### 1. Distance-Based Algorithms 
+* **Files:** `KnnTests.ipynb` | 📄 `documentation.pdf`
+* **Contents:**
+  * Implementation and testing of **K-Nearest Neighbors (K-NN)** and the **Nearest Centroid Classifier**.
+  * Extensive hyperparameter tuning (e.g., finding the optimal $k$ neighbors).
+  * Comparing distance metrics (Euclidean vs. Manhattan distance).
+  * Best achieved accuracy: ~86.3%.
 
-## 🔬 What the Notebook Includes
-Inside the Jupyter Notebook, you will find a complete workflow that covers:
+### 2. Linear Classifiers & Perceptrons
+* **Files:** `linear_classifiers.ipynb` | 📄 `documentation.pdf`
+* **Contents:**
+  * Building the **Perceptron** algorithm and understanding linear separability.
+  * Implementing multi-class classification techniques from scratch: **One-vs-One (OvO)** and **One-vs-All (OvA)**.
+  * Exploring advanced perceptron variants to stabilize weights: **Averaged Perceptron** and the **Pocket Algorithm**.
 
-* **Experiments & Fine-Tuning:** * Tuning the **k** parameter (number of neighbors) to observe its effect on overfitting and underfitting.
-  * Testing different distance metrics (e.g., Euclidean vs. Manhattan distance).
-  * (Optional) Applying dimensionality reduction techniques (like PCA) to speed up training and inference.
-* **Evaluation:** Assessing the model using metrics such as Accuracy, Precision, and Recall, along with visualizations like the Confusion Matrix.
-* **Nearest Centroid Classifier:** Implementation of the Nearest Centroid Classifier for image classification and experiments/evaluation.
+### 3. Dimensionality Reduction & Clustering
+* **Files:** `notebook.ipynb` | 📄 `documentation.pdf`
+* **Contents:**
+  * Applying **Principal Component Analysis (PCA)** for dimensionality reduction and evaluating information retention (variance).
+  * Unsupervised grouping using the **K-Means** clustering algorithm.
+  * Advanced distance metrics: Exploring the difference between standard Euclidean distance and **Mahalanobis distance** for better decision boundaries.
 
+## 🔬 Core Methodology
+
+Throughout all notebooks, we avoided a static "plug-and-play" approach. Instead, we focused on systematic exploration:
+
+* **Feature Extraction:** Altering and testing various data representation methods before feeding the images into the models.
+* **Algorithm Exploration:** Understanding *why* an algorithm fails or succeeds based on the specific visual overlap of the FashionMNIST classes (e.g., Shirts vs. T-shirts).
+* **Robust Evaluation:** Using **K-Fold Cross-Validation** to find optimal hyperparameters and prevent overfitting, evaluating models with Accuracy, Precision and Confusion Matrices.
+
+---
